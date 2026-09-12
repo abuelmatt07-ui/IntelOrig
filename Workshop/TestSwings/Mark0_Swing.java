@@ -7,6 +7,7 @@
 package TestSwings;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class Mark0_Swing{
@@ -18,10 +19,11 @@ public class Mark0_Swing{
         main.setSize(400, 500);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.getContentPane().setBackground(new Color(0x12346));
-
         main.setLayout(new GridBagLayout());
 
-        Dimension mini = new Dimension(350, 500);
+
+        Dimension mini = new Dimension(350, 400);
+
 
         JPanel Pan1 = new JPanel();
         Pan1.setBackground(new Color(255, 255, 255));

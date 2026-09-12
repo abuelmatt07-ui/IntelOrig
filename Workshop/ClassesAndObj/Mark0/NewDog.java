@@ -16,7 +16,7 @@ public class NewDog {
 
         System.out.println(this.DogName + " Barks...");
 
-        for(int i = 1; i < times; i++){
+        for(int i = 0; i < times; i++){
 
             System.out.print("Bark! ");
 

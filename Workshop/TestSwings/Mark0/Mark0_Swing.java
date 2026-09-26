@@ -4,11 +4,9 @@
 
 
 
-package TestSwings;
+package TestSwings.Mark0;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 
 public class Mark0_Swing{

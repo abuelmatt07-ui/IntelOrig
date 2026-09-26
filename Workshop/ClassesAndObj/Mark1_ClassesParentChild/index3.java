@@ -8,7 +8,12 @@ package ClassesAndObj.Mark1_ClassesParentChild;
         int Health;
         int Power;
 
-        // Activity 2: Parent Method
+        // Activity 2: Parent Method 1
+        public void DisplayInfo(){
+            System.out.println("\nHealth: " + Health + "\nPower: " + Power);
+        }
+
+        // Activity 2: Parent Method 2
         public void SoundEffect(){
             System.out.println("Sound Effects!");
         }
@@ -33,18 +38,22 @@ package ClassesAndObj.Mark1_ClassesParentChild;
 
         }
 
-        // Displays Object/Tower info
-        public void ShowTowerInf() {
+        // For telling if the Object is a Tower or the Base
+        public String TowerOrBase(){
 
-            // If the object is numbered as 0, then it is the main/base
-            if (TowerNum == 0) {
-                System.out.println("\nBase:");
+            if(TowerNum == 0){ // if TowerNum  is 0 then it returns 'Base' string for printing or other purposes
+                return "Base";
+            } else { // Returns 'Tower n' or for example 'Tower 1' if TowerNum is not 0
+                return "Tower " + TowerNum;
             }
 
-            // Else if tower in not numbered as 0, which just displays the object as a normal tower
-            else {
-                System.out.println("\nTower " + TowerNum + ":");
-            }
+        }
+
+        // Overrides display from Parent to fit for Object/Tower info
+        @Override
+        public void DisplayInfo() {
+
+            System.out.println(TowerOrBase() + ":");
 
             System.out.println("* Health: " + Health);
             System.out.println("* Power: " + Power);
@@ -55,7 +64,7 @@ package ClassesAndObj.Mark1_ClassesParentChild;
         @Override
         public void SoundEffect(){
 
-            System.out.println("Tower " + TowerNum + ": 'Shimmer...'"); // New Sound Effect
+            System.out.println(TowerOrBase() + ": 'Shimmer...'"); // New Sound Effect
 
         }
 
@@ -80,8 +89,9 @@ package ClassesAndObj.Mark1_ClassesParentChild;
 
         }
 
-        // Displays Object/Chracter info
-        public void ShowCharcInfo() {
+        // Overrides display from Parent to fit for Character/Tower info
+        @Override
+        public void DisplayInfo() {
 
             System.out.println("\n" + Name + ":");
             System.out.println("* Health: " + Health);
@@ -110,17 +120,17 @@ public class index3 {
     static void main(String[] args){
 
         // Object created with Child Class: TOWER
-        Tower Tower1 = new Tower(6, 50, 5);
+        BasePlate Tower1 = new Tower(0, 50, 5);
 
         // Object created with Child Class: CHARACTER
-        Charc Saber = new Charc("Saber", "Sword", 30, 5);
+        BasePlate Saber = new Charc("Saber", "Sword", 30, 5);
 
         // Show info for Tower obj
-        Tower1.ShowTowerInf();
+        Tower1.DisplayInfo();
         Tower1.SoundEffect(); // Calls the sound effect that was overridden
 
         // Show info for Tower obj
-        Saber.ShowCharcInfo();
+        Saber.DisplayInfo();
         Saber.SoundEffect(); // Calls the sound effect that was overridden
 
 

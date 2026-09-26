@@ -5,6 +5,10 @@ package ClassesAndObj.Mark1_ClassesParentChild;
         int Health;
         int Power;
 
+        public void SoundEffect(){
+            System.out.println("Sound Effects!");
+        }
+
     }
 
     class Tower extends BasePlate {
@@ -20,13 +24,20 @@ package ClassesAndObj.Mark1_ClassesParentChild;
         }
         public void ShowTowerInf() {
 
-            if (this.TowerNum == 0) {
+            if (TowerNum == 0) {
                 System.out.println("\nBase:");
             } else {
-                System.out.println("\nTower " + this.TowerNum + ":");
+                System.out.println("\nTower " + TowerNum + ":");
             }
-            System.out.println("* Health: " + this.Health);
-            System.out.println("* Power: " + this.Power);
+            System.out.println("* Health: " + Health);
+            System.out.println("* Power: " + Power);
+
+        }
+
+        @Override
+        public void SoundEffect(){
+
+            System.out.println("Tower " + TowerNum + ": 'Shimmer...'");
 
         }
 
@@ -48,10 +59,17 @@ package ClassesAndObj.Mark1_ClassesParentChild;
 
         public void ShowCharcInfo() {
 
-            System.out.println("\n" + this.Name + ":");
-            System.out.println("* Health: " + this.Health);
-            System.out.println("* Power: " + this.Power);
-            System.out.println("* Weapon: " + this.Weapon);
+            System.out.println("\n" + Name + ":");
+            System.out.println("* Health: " + Health);
+            System.out.println("* Power: " + Power);
+            System.out.println("* Weapon: " + Weapon);
+
+        }
+
+        @Override
+        public void SoundEffect(){
+
+            System.out.println(Name + ": 'Attack!'");
 
         }
 
@@ -61,15 +79,19 @@ package ClassesAndObj.Mark1_ClassesParentChild;
 
 
 
+
 public class index3 {
 
     static void main(String[] args){
 
-        Tower Tower1 = new Tower(0, 50, 5);
+        Tower Tower1 = new Tower(6, 50, 5);
         Charc Saber = new Charc("Saber", "Sword", 30, 5);
 
         Tower1.ShowTowerInf();
+        Tower1.SoundEffect();
+
         Saber.ShowCharcInfo();
+        Saber.SoundEffect();
 
 
     }

@@ -50,7 +50,7 @@ public class Mark0_Swing{
 
 
 
-        JLabel text1 = new JLabel("GoRoom");
+        JLabel text1 = new JLabel("RoomFind");
         text1.setFont(Titles);
         text1.setForeground(blue);
         text1.setAlignmentX(Component.CENTER_ALIGNMENT);

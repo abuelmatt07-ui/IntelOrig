@@ -4,6 +4,9 @@ public class Voting {
 
     private String name;
     private int age;
+    private int candi;
+
+
 
     public Voting(String newName, int newAge) {
         this.name = newName;
@@ -17,6 +20,12 @@ public class Voting {
 
     public void setAge(int newAge) {
         this.age = newAge;
+    }
+
+    public void setVote(int choCan){
+
+        this.candi = choCan;
+
     }
 
 
@@ -33,6 +42,11 @@ public class Voting {
     public boolean CheckAge() {
         return age >= 18;
     }
+
+    public int getCan() {
+        return this.candi;
+    }
+
 }
 
 
